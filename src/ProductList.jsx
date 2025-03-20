@@ -8,6 +8,8 @@ function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});// State to track which products are added to cart
+    const cart = useSelector(state => state.cart.items);
+    const dispatch = useDispatch();
 
     const plantsArray = [
         {
@@ -264,7 +266,7 @@ function ProductList({ onHomeClick }) {
             [product.name]: true,
         }));
     }
-    
+
     return (
         <div>
             <div className="navbar" style={styleObj}>
